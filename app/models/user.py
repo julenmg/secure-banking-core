@@ -1,9 +1,10 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import Boolean, DateTime, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
+from app.models.task import Task  # Añadir la importación de Task
 
 
 class User(Base):
@@ -19,3 +20,4 @@ class User(Base):
         default=lambda: datetime.now(timezone.utc),
         nullable=False,
     )
+    tasks: Mapped[list["Task"]] = relationship("Task", back_populates="user")
