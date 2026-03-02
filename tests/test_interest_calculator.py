@@ -1,4 +1,5 @@
 from app.services.interest_calculator import InterestCalculator, CompoundingPeriod
+from decimal import Decimal
 
 def test_compound_monthly():
     principal = Decimal("1000")
