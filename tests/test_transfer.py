@@ -6,6 +6,7 @@ from app.models.transaction import Transaction
 from app.models.user import User
 from app.schemas.transfer import TransferRequest
 from app.services.transfer_service import TransferService
+import pytest
 
 @pytest.mark.asyncio
 async def test_transfer_success(db_session: AsyncSession):
