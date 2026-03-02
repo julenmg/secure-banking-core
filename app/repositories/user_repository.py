@@ -19,6 +19,6 @@ class UserRepository:
     async def create(self, email: str, username: str, hashed_password: str) -> User:
         user = User(email=email, username=username, hashed_password=hashed_password)
         self._db.add(user)
-        await self._db.commit()
+        await self._db.flush()
         await self._db.refresh(user)
         return user

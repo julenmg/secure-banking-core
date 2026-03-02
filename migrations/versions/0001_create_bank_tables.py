@@ -29,7 +29,7 @@ from alembic import op
 
 # Alembic metadata
 revision: str = "0001"
-down_revision: str | None = None
+down_revision: str | None = "0000"
 branch_labels: str | tuple[str, ...] | None = None
 depends_on: str | tuple[str, ...] | None = None
 
